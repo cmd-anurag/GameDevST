@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
     public GameObject ballPrefab;
     public Transform spawnPosition;
 
-    void Start()
+    void OnEnable()
     {
         Instantiate(ballPrefab, spawnPosition.position, Quaternion.identity);
     }

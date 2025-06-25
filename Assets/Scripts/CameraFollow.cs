@@ -5,13 +5,21 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     Transform ballTransform;
-    public Vector3 positionOffset = new(0, 4, -5);
+    public Vector3 positionOffset;
 
 
     void Start()
     {
-        // instead of referencing this script during instantiation to set ballTransform, retrieve it using Tag. i have no idea if its a bad pattern.
-        ballTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+        {
+            ballTransform = playerObj.transform;
+        }
+        else
+        {
+            Debug.LogError("Player object with tag 'Player' not found in the scene.");
+        }
+
     }
 
     void Update()

@@ -1,16 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BallInput : MonoBehaviour
 {
-    public float speed = 3.5f;
-
-
+    public float speed;
+    private Rigidbody rb;
+    Vector3 inputDirecion;
+ 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -18,10 +20,11 @@ public class BallInput : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
+        inputDirecion = new Vector3(horizontal, 0, vertical).normalized;
+    }
 
-        Vector3 movement = speed * Time.deltaTime * new Vector3(horizontal, 0, vertical);
-        Rigidbody rb = GetComponent<Rigidbody>();
-        
-        rb.AddForce(movement, ForceMode.Impulse);
+    void FixedUpdate()
+    {
+        rb.AddForce(speed * inputDirecion, ForceMode.Force);
     }
 }
