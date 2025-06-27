@@ -27,8 +27,8 @@ Transform:
   m_GameObject: {fileID: 333076065442686671}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0007, y: 0.0001, z: -0.0995}
-  m_LocalScale: {x: 0.20149592, y: 1.0001118, z: 0.9987959}
+  m_LocalPosition: {x: 0.0017, y: -0.0038, z: -0.0889}
+  m_LocalScale: {x: 0.20626335, y: 1.0080127, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1039288032488292687}
@@ -301,8 +301,8 @@ Transform:
   m_GameObject: {fileID: 2025760036704561207}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0961}
-  m_LocalScale: {x: 0.2, y: 1, z: 0.99216}
+  m_LocalPosition: {x: -0.003, y: 0, z: 0.1001}
+  m_LocalScale: {x: 0.1940622, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5126743288655849382}
@@ -384,8 +384,8 @@ Transform:
   m_GameObject: {fileID: 3321781255003269006}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0.0971}
-  m_LocalScale: {x: 0.2, y: 1, z: 0.99424}
+  m_LocalPosition: {x: -0.0049, y: 0, z: 0.0963}
+  m_LocalScale: {x: 0.19023699, y: 1, z: 1.0081}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1805948158939240598}
@@ -494,6 +494,7 @@ MonoBehaviour:
   frontWall: {fileID: 1678519195488370393}
   backWall: {fileID: 580355438345031761}
   unvisited: {fileID: 8669651964716903141}
+  coinPrefab: {fileID: 4364144727248480564, guid: 77e879b2c04c28147aa75387cdbc68b1, type: 3}
 --- !u!1 &5871087615652793831
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,8 +522,8 @@ Transform:
   m_GameObject: {fileID: 5871087615652793831}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: -0.0964}
-  m_LocalScale: {x: 0.2, y: 1, z: 1.0020475}
+  m_LocalPosition: {x: -0.0042, y: 0, z: -0.0976}
+  m_LocalScale: {x: 0.19168, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4976691383571673477}

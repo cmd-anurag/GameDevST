@@ -20,13 +20,28 @@ public class MazeCell : MonoBehaviour
     [SerializeField]
     private GameObject unvisited;
 
+    [SerializeField]
+    private GameObject coinPrefab;
+
+    public Transform Collectibles;
+
     public bool IsVisited { get; private set; }
+
 
     public void Visit()
     {
         IsVisited = true;
         unvisited.SetActive(false);
-    }
+
+        // spawn a coin with a random chance
+        if (Random.value <= 0.1f) {
+            float x = transform.position.x;
+            float z = transform.position.z;
+            Vector3 spawnPos = new(x, 0.65f, z);
+            GameObject coin = Instantiate(coinPrefab, spawnPos, Quaternion.Euler(90, 0, 0));
+            coin.transform.SetParent(Collectibles, true);
+        }
+    } 
 
     public void ClearLeftWall()
     {

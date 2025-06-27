@@ -23,6 +23,7 @@ public class MazeGenerator : MonoBehaviour
     void Start()
     {
         mazeGrid = new MazeCell[length, breadth];
+        GameObject Collectibles = GameObject.Find("Collectibles");
 
         for (int i = 0; i < length; ++i)
         {
@@ -30,6 +31,7 @@ public class MazeGenerator : MonoBehaviour
             {
                 MazeCell cell = Instantiate(MazeCellPrefab, new Vector3(i, 0, j), Quaternion.identity, Maze.transform);
                 cell.name = "Cell " + i + " " + j;
+                cell.Collectibles = Collectibles.transform;
                 mazeGrid[i, j] = cell;
 
                 // Only the leftmost column should keep their left walls
@@ -151,11 +153,5 @@ public class MazeGenerator : MonoBehaviour
         }
 
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
