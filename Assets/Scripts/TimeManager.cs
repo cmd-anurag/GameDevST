@@ -9,6 +9,9 @@ public class TimeManager : MonoBehaviour
     private Text timerText;
 
     [SerializeField]
+    private CollectibleManager collectibleManager;
+
+    [SerializeField]
     private float startTime = 300f;
 
     private float timeLeft;
@@ -26,10 +29,18 @@ public class TimeManager : MonoBehaviour
         if(isRunning)
         {
             timeLeft -= Time.deltaTime;
-            if(timeLeft <= 0.0f)
+            if(timeLeft <= 0.0f && !collectibleManager.allCoinsCollected)
             {
+                GameManager.gameManagerInstance.GameOverScreen(false);
+                Debug.Log("Game lost");
                 isRunning = false;
                 return;
+            }
+            if (collectibleManager.allCoinsCollected)
+            {
+                GameManager.gameManagerInstance.GameOverScreen(true);
+                Debug.Log("Game Won");
+                isRunning = false;
             }
             UpdateTimer();
         }
